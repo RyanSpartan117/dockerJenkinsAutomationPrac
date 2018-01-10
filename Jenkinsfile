@@ -1,4 +1,4 @@
-practicePipe {
+practiceSinglePipe {
     agent { docker 'ruby' }
     stages {
         stage('build') {
