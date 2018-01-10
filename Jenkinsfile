@@ -1,5 +1,5 @@
 practiceSinglePipe {
-    agent { docker 'ruby' }
+    agent { docker 'ruby:2.4.3-slim-jessie' }
     stages {
         stage('build') {
             steps {
