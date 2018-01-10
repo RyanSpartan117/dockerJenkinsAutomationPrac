@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'ruby:2.4.3-slim-jessie' }
+    agent { docker 'ruby' }
     stages {
         stage('build') {
             steps {
