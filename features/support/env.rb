@@ -13,7 +13,7 @@ Capybara.default_driver = :selenium
 # Capybara.current_session.current_window.resize_to(1920,1080)
 
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end
 
  Capybara.default_selector = :css
