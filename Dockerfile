@@ -49,7 +49,6 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-c
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
-USER jenkins
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/jenkins/.jenkins && mkdir -p ${AGENT_WORKDIR}
 
@@ -58,5 +57,5 @@ VOLUME ${AGENT_WORKDIR}
 WORKDIR /home/jenkins
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
-
-ENTRYPOINT ["jenkins-slave"]
+RUN chmod 777 /usr/local/bin/jenkins-slave
+ENTRYPOINT jenkins-slave
